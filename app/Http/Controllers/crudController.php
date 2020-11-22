@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class crudController extends Controller
 {
-    //
 
     public function index(){
 
@@ -45,7 +44,7 @@ class crudController extends Controller
             'phone' => $phone,
         ]);
 
-        return redirect('/');
+        return redirect('/')->with('message','Add User Successfully');
     }
 
 
@@ -53,7 +52,7 @@ class crudController extends Controller
         $user = crudUser::find($id);
         $user -> update($request->all());
 
-        return redirect('/');
+        return redirect('/')->with('message','Update Successfully');
     }
 
 
@@ -62,7 +61,7 @@ class crudController extends Controller
         $user = crudUser::find($id);
         $user -> delete();
 
-        return redirect('/');
+        return redirect('/')->with('message','Delete Successfully');
 
     }
 

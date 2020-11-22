@@ -2,6 +2,10 @@
 
 @section('title','All Users')
 
+@if (session()->has('message'))
+    <p> {{ session() -> get('message') }}</p>
+@endif
+
 
 @section('content')
     <h3> All Users </h3>
@@ -32,4 +36,11 @@
     </table>
 
 <a href="{{ url('/add')}}">Add User</a>
+
+
+
+@if (session('message'))
+    {{ session('message') }}
+@endif
+
 @endsection

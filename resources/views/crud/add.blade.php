@@ -4,6 +4,10 @@
 
 @section('content')
 
+
+
+
+
     <form action="{{ url('/add')}}" method="post">
 
     @csrf
